@@ -1,0 +1,46 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "title" : "HelloWorld",
+    "version" : "1.0.0",
+    "description" : "Hello World"
+  },
+  "paths" : {
+    "/sayHello" : {
+      "get" : {
+        "operationId" : "getSayHello",
+        "responses" : {
+          "200" : {
+            "description" : "The operation was successful.",
+            "schema" : {
+              "$ref" : "#/definitions/Customer"
+            }
+          }
+        },
+        "produces" : [ "application/json" ],
+        "description" : "Retrieve sayHello",
+        "parameters" : [ {
+          "name" : "name",
+          "in" : "query",
+          "type" : "string",
+          "required" : true,
+          "description" : "Customer Name"
+        } ]
+      }
+    }
+  },
+  "basePath" : "/helloworld/v1",
+  "definitions" : {
+    "Customer" : {
+      "type" : "object",
+      "properties" : {
+        "FirstName" : {
+          "type" : "string"
+        },
+        "LastName" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
+}
