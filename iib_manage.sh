@@ -73,7 +73,7 @@ monitor()
 	done
 }
 
-iib-license-check.sh
+echo "inside iib_manage.sh, about to run start"
 start
 trap stop SIGTERM SIGINT
 monitor
