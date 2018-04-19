@@ -19,7 +19,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 # Install IIB V10 Developer edition
-RUN mkdir /opt/ibm && \
+RUN mkdir /opt/ibm && mkdir /tmp/BARs && \
     curl http://10.0.0.1:8080/iib/10.0.0-IIB-LINUXX64-FP0010.tar.gz \
     | tar zx --exclude iib-10.0.0.10/tools --directory /opt/ibm && \
     /opt/ibm/iib-10.0.0.10/iib make registry global accept license silently
@@ -44,6 +44,7 @@ RUN sed -i 's/sha512/sha512 minlen=8/'  /etc/pam.d/common-password && \
 COPY iib_manage.sh /usr/local/bin/
 COPY iib-license-check.sh /usr/local/bin/
 COPY iib_env.sh /usr/local/bin/
+COPY BARfiles/*.bar /tmp/BARs/
 RUN chmod +rx /usr/local/bin/*.sh
 
 # Set BASH_ENV to source mqsiprofile when using docker exec bash -c

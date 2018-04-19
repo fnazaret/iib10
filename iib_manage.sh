@@ -57,7 +57,12 @@ start()
           sudo /usr/sbin/rsyslogd
           echo "Starting node $NODE_NAME"
           mqsistart $NODE_NAME
-          echo "----------------------------------------" 
+          echo "Deploying BAR files"
+          for f in /tmp/BARs/* ; do
+          echo "Deploying $f ..."
+          mqsideploy $NODE_NAME -e $SERVER_NAME -a $f -w 120
+          done
+          echo "----------------------------------------"
           echo "----------------------------------------"
 	fi
 }
