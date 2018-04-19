@@ -51,7 +51,7 @@ ENV BASH_ENV=/usr/local/bin/iib_env.sh
 ENV MQSI_MQTT_LOCAL_HOSTNAME=127.0.0.1
 
 # Expose default admin port and http port
-EXPOSE 4414 7800
+EXPOSE 4414 7800 7080
 
 USER iibuser
 

@@ -23,10 +23,8 @@ node {
     		input 'Do you want to proceed with Deployment?'
     		stage "Deploy"
 
-            //    create a deployment. Comment this line out after the first deployment.
-		    //    sh "kubectl run iib10app-iibchart --image ${imageName}"
-        	sh "kubectl set image deployment/iib-rel1-ibm-integration iib-rel1-ibm-integration=${imageName}"
-        	sh "kubectl rollout status deployment/iib-rel1-ibm-integration"
+        	sh "kubectl set image deployment/iib10-rel1-ibm-integrati iib10-rel1-ibm-integrati=${imageName}"
+        	sh "kubectl rollout status deployment/iib10-rel1-ibm-integrati"
 	    }
     }
 }
