@@ -8,8 +8,8 @@
 
 set -e
 
-NODE_NAME=${NODENAME-IIBV10NODE}
-SERVER_NAME=${SERVERNAME-default}
+NODE_NAME=IIB_NODE
+SERVER_NAME=IIB_SERVER
 
 stop()
 {
@@ -21,7 +21,7 @@ stop()
 start()
 {
 	echo "----------------------------------------"
-        /opt/ibm/iib-10.0.0.11/iib version
+        /opt/ibm/iib-10.0.0.10/iib version
 	echo "----------------------------------------"
 
         NODE_EXISTS=`mqsilist | grep $NODE_NAME > /dev/null ; echo $?`
