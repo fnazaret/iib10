@@ -20,7 +20,7 @@ RUN apt-get update && \
 
 # Install IIB V10 Developer edition
 RUN mkdir /opt/ibm && mkdir /tmp/BARs && \
-    curl http://10.0.0.1:8080/iib/10.0.0-IIB-LINUXX64-FP0010.tar.gz \
+    curl http://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/integration/10.0.0.10-IIB-LINUX64-DEVELOPER.tar.gz \
     | tar zx --exclude iib-10.0.0.10/tools --directory /opt/ibm && \
     /opt/ibm/iib-10.0.0.10/iib make registry global accept license silently
 
